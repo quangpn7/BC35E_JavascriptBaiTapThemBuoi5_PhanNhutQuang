@@ -36,7 +36,7 @@
     >
       <p class="pt-3 text-">
         Phan Nhựt Quang <br />
-        BC35E - Bài tập Javascript buổi 5
+        BC35E - Bài tập thêm Javascript buổi 5
       </p>
       <hr />
       <ul
@@ -141,221 +141,56 @@
           aria-labelledby="pills-home-tab"
         >
           <h1>BÀI 2</h1>
-          <p>TÍNH TIỀN ĐIỆN</p>
+          <h2 class="text-center mb-5">TÍNH TIỀN CÁP</h2>
           <div class="container w-75 mt-3 text-center">
             <div class="card">
               <div class="card-header text-danger font-weight-bold">
-                NHẬP VÀO TÊN VÀ SỐ ĐIÊN ĐÃ TIÊU THU(kW)
+                NHẬP THÔNG TIN
               </div>
-              <div class="w-75 mx-auto">
+              <div class="w-75 mx-auto d-flex flex-column">
                 <div class="card-body px-0">
-                  <label>TÊN: </label>
-                  <input
-                    id="name"
-                    type="text"
-                    class="form-control d-inline w-50"
-                  />
+                  <select
+                    id="customerType"
+                    class="form-control w-75 mx-auto"
+                    onchange="DOMnumOfConnect()"
+                  >
+                    <option value="null">Chọn loại khách hàng</option>
+                    <option value="personal">Personal</option>
+                    <option value="business">Business</option>
+                  </select>
                 </div>
+
+                <div id="DOMnumOfConnect"></div>
                 <div class="card-body px-0">
-                  <label>Số điện đã tiêu thụ: </label>
                   <input
-                    id="usedKw"
+                    id="customerID"
                     type="number"
-                    class="form-control d-inline w-25"
+                    class="form-control d-inline w-75"
+                    placeholder="Nhập mã khách hàng"
                   />
-                  <label>kW</label>
                 </div>
-              </div>
-              <div class="text-center">
-                <button
-                  id="btnCalcKw"
-                  onclick="ketQuaTongTien()"
-                  class="bg-success text-white w-25 mx-2 p-2 rounded"
-                >
-                  TÍNH
-                </button>
-              </div>
-
-              <div
-                id="usedResult"
-                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
-              ></div>
-            </div>
-          </div>
-        </div>
-        <!-- BÀI 3 -->
-        <div
-          class="tab-pane fade"
-          id="pills-b3"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          <h1>BÀI 3</h1>
-          <p>Đọc số nguyên có 3 chữ số</p>
-          <div class="container w-75 mt-3 text-center">
-            <div class="card">
-              <div class="card-header text-danger font-weight-bold">
-                NHẬP VÀO SỐ NGUYÊN CÓ 3 CHỮ SỐ
-              </div>
-              <div class="w-50 mx-auto">
                 <div class="card-body px-0">
-                  <label>SỐ: </label>
                   <input
-                    id="numB3"
+                    id="numOfChannel"
                     type="number"
-                    placeholder="Vd: 123"
-                    class="form-control d-inline w-50"
+                    class="form-control d-inline w-75"
+                    placeholder="Số kênh cao cấp"
                   />
                 </div>
               </div>
               <div class="text-center">
                 <button
-                  id="btnRead"
+                  id="btnTinhTien"
+                  type="submit"
+                  onclick="feeCalc()"
                   class="bg-success text-white w-25 mx-2 p-2 rounded"
                 >
-                  TÍNH
+                  TÍNH TIỀN
                 </button>
               </div>
 
               <div
-                id="resultB3"
-                class="card-footer py-4 mt-4 font-weight-bold mb-0 text-danger"
-              ></div>
-            </div>
-          </div>
-        </div>
-        <!-- BÀI 4 -->
-        <div
-          class="tab-pane fade"
-          id="pills-b4"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          <h1>BÀI 4</h1>
-          <p>Tìm sinh viên xa trường nhất</p>
-          <div class="container w-100 mt-3 text-center">
-            <div class="card">
-              <div class="card-header text-danger font-weight-bold">
-                Nhập vào các dữ kiện sau:
-              </div>
-              <!-- Sinh viên 1 -->
-              <div class="sv_1">
-                <p class="m-0 mt-3 font-weight-bold">Sinh viên 1</p>
-                <div class="d-flex">
-                  <div
-                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
-                  >
-                    <label class="mb-0">Tên: </label>
-                    <input
-                      id="nameSt1"
-                      type="text"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">X: </label>
-                    <input
-                      id="xSt1"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">Y: </label>
-                    <input
-                      id="ySt1"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- Sinh viên 2 -->
-              <div class="sv_2">
-                <p class="m-0 mt-3 font-weight-bold">Sinh viên 2</p>
-                <div class="d-flex">
-                  <div
-                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
-                  >
-                    <label class="mb-0">Tên: </label>
-                    <input
-                      id="nameSt2"
-                      type="text"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">X: </label>
-                    <input
-                      id="xSt2"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">Y: </label>
-                    <input
-                      id="ySt2"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- Sinh viên 3 -->
-              <div class="sv_3">
-                <p class="m-0 mt-3 font-weight-bold">Sinh viên 3</p>
-                <div class="d-flex">
-                  <div
-                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
-                  >
-                    <label class="mb-0">Tên: </label>
-                    <input
-                      id="nameSt3"
-                      type="text"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">X: </label>
-                    <input
-                      id="xSt3"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0">Y: </label>
-                    <input
-                      id="ySt3"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- Toạ độ của trường -->
-              <div class="school_index">
-                <p class="m-0 mt-3 font-weight-bold">Tạo độ của trường</p>
-                <div class="d-flex">
-                  <div
-                    class="card-body px-0 d-flex justify-content-center align-items-center w-25"
-                    style="gap: 10px"
-                  >
-                    <label class="mb-0 mr-2">X: </label>
-                    <input
-                      id="xSchool"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                    <label class="mb-0 mr-2">Y: </label>
-                    <input
-                      id="ySchool"
-                      type="number"
-                      class="form-control d-inline w-25"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="text-center">
-                <button
-                  id="btnDistance"
-                  class="bg-success text-white w-25 mx-2 p-2 rounded"
-                >
-                  RUN
-                </button>
-              </div>
-
-              <div
-                id="distanceResult"
+                id="resultPrice"
                 class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
               ></div>
             </div>
