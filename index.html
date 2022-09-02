@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M74.93 43.48L74.93 43.48Q74.93 54.46 70.20 61.30Q65.48 68.14 57.92 70.66L57.92 70.66Q61.25 72.46 63.81 73.76Q66.38 75.07 68.58 76.06Q70.79 77.05 72.81 77.86Q74.84 78.67 77.09 79.48L77.09 79.48Q77.27 80.11 77.27 80.51Q77.27 80.92 77.27 81.28L77.27 81.28Q77.27 82.99 76.23 84.02Q75.20 85.06 73.31 85.06L73.31 85.06Q70.43 85.06 65.80 82.58Q61.16 80.11 55.22 76.06L55.22 76.06L49.28 72.01L48.83 72.01Q43.25 72.01 38.48 70.16Q33.71 68.32 30.20 64.76Q26.69 61.21 24.71 55.85Q22.73 50.50 22.73 43.48L22.73 43.48Q22.73 36.46 24.76 31.15Q26.78 25.84 30.29 22.24Q33.80 18.64 38.57 16.79Q43.34 14.95 48.83 14.95L48.83 14.95Q54.32 14.95 59.09 16.79Q63.86 18.64 67.37 22.24Q70.88 25.84 72.91 31.15Q74.93 36.46 74.93 43.48ZM67.46 43.48L67.46 43.48Q67.46 32.68 62.38 26.92Q57.29 21.16 48.83 21.16L48.83 21.16Q44.60 21.16 41.18 22.64Q37.76 24.13 35.33 26.96Q32.90 29.80 31.59 33.94Q30.29 38.08 30.29 43.48L30.29 43.48Q30.29 54.28 35.33 60.04Q40.37 65.80 48.83 65.80L48.83 65.80Q57.38 65.80 62.42 60.04Q67.46 54.28 67.46 43.48Z%22></path></svg>"
+    />
+    <title>Bài tập JavaScript Buổi 5</title>
+    <!-- BOOSTRAP 4 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(47, 47, 175, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+      );
+    "
+  >
+    <div class="mb-5"></div>
+    <!-- TAB PILLS -->
+    <div
+      class="container-fluid w-50 m-auto border border-dark shadow pb-5 bg-light rounded"
+    >
+      <p class="pt-3 text-">
+        Phan Nhựt Quang <br />
+        BC35E - Bài tập Javascript buổi 5
+      </p>
+      <hr />
+      <ul
+        class="nav nav-pills mb-3 justify-content-center"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="pills-bai1"
+            data-toggle="pill"
+            data-target="#pills-b1"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+          >
+            Bài 1
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="pills-bai2"
+            data-toggle="pill"
+            data-target="#pills-b2"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+          >
+            Bài 2
+          </button>
+        </li>
+      </ul>
+
+      <hr />
+      <!-- CONTENT -->
+      <div class="tab-content" id="pills-tabContent">
+        <!-- BÀI 1 -->
+        <div
+          class="tab-pane fade show active"
+          id="pills-b1"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <h1>BÀI 1</h1>
+          <h2 class="text-center mb-5">TÍNH THUẾ THU NHẬP CÁ NHÂN</h2>
+          <div class="container-fluid w-100 mt-3">
+            <div class="card">
+              <div class="card-header text-danger text-center font-weight-bold">
+                HÃY NHẬP VÀO ĐIỂM VÀ THÔNG TIN
+              </div>
+              <div class="w-50 mx-auto">
+                <div class="card-body px-0 text-left">
+                  <label>Họ và tên: </label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+                <div class="card-body px-0 text-left">
+                  <label>Thu nhập/Năm: </label>
+                  <input
+                    id="yearIncome"
+                    type="number"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+                <div class="card-body px-0 text-left">
+                  <label>Số người phụ thuộc: </label>
+                  <input
+                    id="depeMem"
+                    type="number"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+              </div>
+
+              <button
+                onclick="taxResultDOM()"
+                class="bg-success text-white w-25 mx-2 p-2 rounded mx-auto"
+              >
+                KẾT QUẢ
+              </button>
+
+              <div
+                id="taxResultDOM"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <!-- BÀI 2 -->
+        <div
+          class="tab-pane fade"
+          class="tab-pane fade"
+          id="pills-b2"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <h1>BÀI 2</h1>
+          <p>TÍNH TIỀN ĐIỆN</p>
+          <div class="container w-75 mt-3 text-center">
+            <div class="card">
+              <div class="card-header text-danger font-weight-bold">
+                NHẬP VÀO TÊN VÀ SỐ ĐIÊN ĐÃ TIÊU THU(kW)
+              </div>
+              <div class="w-75 mx-auto">
+                <div class="card-body px-0">
+                  <label>TÊN: </label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+                <div class="card-body px-0">
+                  <label>Số điện đã tiêu thụ: </label>
+                  <input
+                    id="usedKw"
+                    type="number"
+                    class="form-control d-inline w-25"
+                  />
+                  <label>kW</label>
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnCalcKw"
+                  onclick="ketQuaTongTien()"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  TÍNH
+                </button>
+              </div>
+
+              <div
+                id="usedResult"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <!-- BÀI 3 -->
+        <div
+          class="tab-pane fade"
+          id="pills-b3"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <h1>BÀI 3</h1>
+          <p>Đọc số nguyên có 3 chữ số</p>
+          <div class="container w-75 mt-3 text-center">
+            <div class="card">
+              <div class="card-header text-danger font-weight-bold">
+                NHẬP VÀO SỐ NGUYÊN CÓ 3 CHỮ SỐ
+              </div>
+              <div class="w-50 mx-auto">
+                <div class="card-body px-0">
+                  <label>SỐ: </label>
+                  <input
+                    id="numB3"
+                    type="number"
+                    placeholder="Vd: 123"
+                    class="form-control d-inline w-50"
+                  />
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnRead"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  TÍNH
+                </button>
+              </div>
+
+              <div
+                id="resultB3"
+                class="card-footer py-4 mt-4 font-weight-bold mb-0 text-danger"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <!-- BÀI 4 -->
+        <div
+          class="tab-pane fade"
+          id="pills-b4"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <h1>BÀI 4</h1>
+          <p>Tìm sinh viên xa trường nhất</p>
+          <div class="container w-100 mt-3 text-center">
+            <div class="card">
+              <div class="card-header text-danger font-weight-bold">
+                Nhập vào các dữ kiện sau:
+              </div>
+              <!-- Sinh viên 1 -->
+              <div class="sv_1">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 1</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt1"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt1"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt1"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Sinh viên 2 -->
+              <div class="sv_2">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 2</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt2"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt2"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt2"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Sinh viên 3 -->
+              <div class="sv_3">
+                <p class="m-0 mt-3 font-weight-bold">Sinh viên 3</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-around align-items-center w-100"
+                  >
+                    <label class="mb-0">Tên: </label>
+                    <input
+                      id="nameSt3"
+                      type="text"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">X: </label>
+                    <input
+                      id="xSt3"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0">Y: </label>
+                    <input
+                      id="ySt3"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Toạ độ của trường -->
+              <div class="school_index">
+                <p class="m-0 mt-3 font-weight-bold">Tạo độ của trường</p>
+                <div class="d-flex">
+                  <div
+                    class="card-body px-0 d-flex justify-content-center align-items-center w-25"
+                    style="gap: 10px"
+                  >
+                    <label class="mb-0 mr-2">X: </label>
+                    <input
+                      id="xSchool"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                    <label class="mb-0 mr-2">Y: </label>
+                    <input
+                      id="ySchool"
+                      type="number"
+                      class="form-control d-inline w-25"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  id="btnDistance"
+                  class="bg-success text-white w-25 mx-2 p-2 rounded"
+                >
+                  RUN
+                </button>
+              </div>
+
+              <div
+                id="distanceResult"
+                class="card-footer text-muted py-4 mt-4 font-weight-bold mb-0"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPT -->
+    <!-- JQUERY -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BS4 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BOOSTAP 4 SCRIPT -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <!-- MAIN SCRIPT -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
