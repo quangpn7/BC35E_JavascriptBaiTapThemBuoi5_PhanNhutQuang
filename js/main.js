@@ -36,19 +36,19 @@ function taxAfterCalc() {
   }
   var taxBefore = taxBeforeCalc(yearIncome, depeMem);
 
-  if (taxBefore <= 60000000 && taxBefore > 0) {
+  if (taxBefore <= 6e7 && taxBefore > 0) {
     return (taxAfter = taxBefore * 0.05);
-  } else if (taxBefore > 60000000 && taxBefore <= 120000000) {
+  } else if (taxBefore > 6e7 && taxBefore <= 12e7) {
     return (taxAfter = taxBefore * 0.1);
-  } else if (taxBefore > 120000000 && taxBefore <= 210000000) {
+  } else if (taxBefore > 12e7 && taxBefore <= 21e7) {
     return (taxAfter = taxBefore * 0.15);
-  } else if (taxBefore > 210000000 && taxBefore <= 384000000) {
+  } else if (taxBefore > 21e7 && taxBefore <= 384e6) {
     return (taxAfter = taxBefore * 0.2);
-  } else if (taxBefore > 384000000 && taxBefore <= 642000000) {
+  } else if (taxBefore > 384e6 && taxBefore <= 642e6) {
     return (taxAfter = taxBefore * 0.25);
-  } else if (taxBefore > 642000000 && taxBefore <= 960000000) {
+  } else if (taxBefore > 642e6 && taxBefore <= 96e7) {
     return (taxAfter = taxBefore * 0.3);
-  } else if (taxBefore > 960000000) {
+  } else if (taxBefore > 96e7) {
     return (taxAfter = taxBefore * 0.35);
   } else {
     console.log("Số non");
